@@ -1,38 +1,21 @@
-﻿using System.Collections.ObjectModel;
+﻿using CommunityToolkit.Maui.Views;
+using System.Collections.ObjectModel;
 
 namespace TapGestureRecognizerBug
 {
     public partial class MainPage : ContentPage
     {
-        ObservableCollection<MyItem> MyItems { get; set; } = 
-            [ new MyItem { MyName = "Item 1" }, new MyItem { MyName = "Item 2" } ];
-        
+      
         public MainPage()
         {
             InitializeComponent();
-            Initialize();
         }
 
-        void Initialize()
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            MyCollectionView.BindingContext = this;
-            MyCollectionView.ItemsSource = MyItems;
-        }
+            var popup = new MyPopup();
 
-        private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-        {
-            MyCollectionView.BackgroundColor = Colors.Red;
+            var result = await this.ShowPopupAsync(popup);
         }
     }
-
-    public class MyItem
-    {
-        public string MyName { get; set; }
-
-        public override string ToString()
-        {
-            return MyName;
-        }
-    }
-
 }

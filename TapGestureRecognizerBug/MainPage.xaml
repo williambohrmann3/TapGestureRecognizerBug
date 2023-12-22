@@ -4,22 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <StackLayout>
-        <CollectionView x:Name="MyCollectionView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Border>
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                        </Border.GestureRecognizers>
-                        <Grid>
-                            <Label Margin="5"
-                                   Padding="5"
-                                   Text="{Binding MyName}" />
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Button Clicked="Button_Clicked" Text="Open popup" />
     </StackLayout>
 
 </ContentPage>
