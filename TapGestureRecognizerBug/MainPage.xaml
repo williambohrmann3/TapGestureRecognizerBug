@@ -11,9 +11,11 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                         </Border.GestureRecognizers>
-                        <Label Margin="5"
-                               Padding="5"
-                               Text="{Binding MyName}" />
+                        <Grid>
+                            <Label Margin="5"
+                                   Padding="5"
+                                   Text="{Binding MyName}" />
+                        </Grid>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
